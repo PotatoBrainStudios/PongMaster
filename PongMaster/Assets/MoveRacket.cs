@@ -13,11 +13,11 @@ public class MoveRacket : MonoBehaviour
 
     void Start()
     {
-        dragDistance = Screen.height * 15 / 100; //dragDistance is 15% height of the screen
+        dragDistance = Screen.height/100 * 5;
     }
     void FixedUpdate()
     {
-        float v = Input.GetAxisRaw(axis);
+        // float v = Input.GetAxisRaw(axis);
         // GetComponent<Rigidbody2D>().velocity = new Vector2(0, v) * speed;
 
         if (Input.touchCount == 1) // user is touching the screen with a single touch
@@ -36,7 +36,6 @@ public class MoveRacket : MonoBehaviour
             {
                 lastTouchPos = touch.position;  //last touch position. Ommitted if you use list
 
-                //Check if drag distance is greater than 20% of the screen height
                 if (Mathf.Abs(lastTouchPos.y - firstTouchPos.y) > dragDistance)
                 {//It's a drag
                     if (lastTouchPos.y > firstTouchPos.y)  //If the movement was up
@@ -51,6 +50,10 @@ public class MoveRacket : MonoBehaviour
 
                     }
                 }
+            }
+            else {
+                // It's a t(r)ap!
+                GetComponent<Rigidbody2D>().velocity = Vector2.zero;
             }
         }
     }
