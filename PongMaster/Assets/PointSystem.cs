@@ -7,6 +7,11 @@ public class PointSystem : MonoBehaviour {
     int playerLeft = 0;
     int playerRight = 0;
 
+    void Start()
+    {
+        Debug.Log("Hello World");
+    }
+
     void OnCollisionEnter2D(Collision2D col)
     {
         if (col.gameObject.name == "WallLeft")
