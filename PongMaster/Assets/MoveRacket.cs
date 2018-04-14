@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class MoveRacket : MonoBehaviour
 {
-    public float speed = 30;
-    public string axis = "Vertical";
+    Rigidbody2D rb;
 
+    void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
     void FixedUpdate()
     {
-        float v = Input.GetAxisRaw(axis);
-        GetComponent<Rigidbody2D>().velocity = new Vector2(0, v) * speed;
+        var deltaY = Input.GetTouch(0).deltaPosition.y;
+        var newPos = new Vector2(rb.position.x, rb.position.y + (deltaY/8));
+        rb.MovePosition(newPos);
     }
 }
