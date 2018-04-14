@@ -12,6 +12,6 @@ public class Bot : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-        transform.position = new Vector2(bar.position.x, bar.position.y);
+        transform.position = new Vector2(transform.position.x, bar.position.y);
 	}
 }
