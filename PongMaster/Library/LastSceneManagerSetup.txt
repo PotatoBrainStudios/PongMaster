@@ -1,4 +1,0 @@
-sceneSetups:
-- path: Assets/PongMaster.unity
-  isLoaded: 1
-  isActive: 1
