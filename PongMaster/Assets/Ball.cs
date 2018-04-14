@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour {
 
-    public float speed = 30;
+    public float speed = 500000;
 
     // Use this for initialization
 
